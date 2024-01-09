@@ -16,15 +16,15 @@ async def on_ready():
 async def ciao(ctx):
     await ctx.send(f'Ciao! Sono un bot {bot.user}!')
 lista_pericoli = [
-    "Le plastiche nell'oceano si decompongono in piccoli pezzi, che poi i pesci mangiano e arrivano fino al nostro stomaco.",
-    "Alcune specie di pesci potrebbero estinguersi per via delle plastiche nell'oceano",
-    "Alcune specie animali potrebbero estinguersi perché il loro habitat è stato degradato"
+    "Plastics in the ocean decompose into small pieces, which fish then eat and end up in our stomachs.",
+    “Some fish species could become extinct due to plastic in the ocean,”
+    "Some animal species may become extinct because their habitat has been degraded"
 ]
 lista_ricicli[
-    'Per riutilizzare il polistirene si possono creare molte cose, per esempio: scatole, cornici o cose del genere.',
-    'per riutilizzare delle bottiglie si possono creare molte cose, per esmpio: con bottiglie molto grandi una scarpiera, un vasetto, un portamatite o cose del genere.',
-    'per rutilizzare i vassoi di plastica trasparente, tagliando 4 trapezzi, incolandoli e mettendoli sul telefono con un video apposito si possono creare degli ologrammi'
-
+    
+'To reuse polystyrene you can create many things, for example: boxes, frames or things like that.',
+    'to reuse bottles you can create many things, for example: with very large bottles a shoe rack, a jar, a pencil holder or things like that.',
+    'to reuse the transparent plastic trays, by cutting 4 pieces, gluing them and placing them on the phone with a special video, you can create holograms'
 
 
 ]
@@ -43,5 +43,9 @@ async def pericoli(ctx, tot=1):
 async def ricicliamo(ctx, tot=1):
     for i in range(tot):
         await ctx.send(random.choice(lista_ricicli))
+
+@bot.command()
+async def aiuto(ctx):
+    await ctx.send(f'pericoli, ricicliamo')
 
 bot.run("INSERISCI QUI IL TUO TOKEN")
